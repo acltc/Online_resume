@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get '/online_resumes/:id' => 'online_resumes#show', :as :online_resume
+  get '/online_resumes/:id' => 'online_resumes#show', :as => :online_resume
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
