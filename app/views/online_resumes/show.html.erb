@@ -6,27 +6,37 @@
     <!-- <h1><#%= @student.name %></h1> -->
     <div class="row">
       <div class="col-md-4">
-        <img src="https://placekitten.com/g/200/300"/>
+        <img src="<%= @student.photo%>" >
       </div>
       <div class="col-md-8">
-        <h1> <%= @student.first_name %> </h1>
+        <h1> <%= @student.full_name %> </h1>
         <p> 
-          Nullam id dolor id nibh ultricies vehicula ut id elit. Curabitur blandit tempus porttitor.
+          <%= @student.short_bio %>
         </p>
       </div>
     </div>
   </div>
   <div class="col-md-3">
-    <a href="#">
+    <a href="<%= @student.linkedin %>" target="_blank">
       <img class="icons" src="http://www.njsacc.org/wordpress/wp-content/uploads/transparent-Linkedin-logo-icon.png">
     </a>
-    <a href="#">
+    <a href="<%= @student.github %>" target="_blank">
       <img class="icons" src="https://pbs.twimg.com/profile_images/426158315781881856/sBsvBbjY_400x400.png">
     </a>
     <a href="#">
       <img class="icons" src="http://icons.iconarchive.com/icons/danleech/simple/1024/twitter-icon.png">
     </a>
+    <hr>
+    <ul class="list-group">
+      <li class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <a href="mailto:<%= @student.email %>"><%= @student.email %></a></li>
+      <li class="list-group-item"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> <%= @student.phone_number%></li>
+      <li class="list-group-item"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> <a href="<%= @student.blog %>" target="_blank"> Personal Blog</a></li>
+    </ul>
+   <!--  <%= simple_format(@student.twitter) %> -->
+    <a class="twitter-timeline" href="https://twitter.com/inkrypto" data-widget-id="<%= @student.twitter%>">Tweets by @inkrypto</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </div>
+ 
 
 </div>
 
