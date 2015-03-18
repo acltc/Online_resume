@@ -1,6 +1,9 @@
 class Student
 
-  attr_reader :first_name, :last_name, :email, :phone_number, :short_bio, :linkedin, :twitter, :blog, :github, :photo, :id
+# has_many :experiences
+# has_many :experience_details,  :through => :experiences
+
+  attr_reader :first_name, :last_name, :email, :phone_number, :short_bio, :linkedin, :twitter, :blog, :github, :photo, :id, :experiences, :experience_details
 
   def initialize(hash)
     @first_name = hash["first_name"]
@@ -14,6 +17,10 @@ class Student
     @blog = hash["blog"]
     @id = hash["id"]
     @twitter = hash["twitter"]
+    @experiences = hash["experiences"]
+    @experience_details = hash["experiences"][0]["details"]
+
+
   end
 
   def self.find(id)
@@ -40,3 +47,7 @@ class Student
    return tweet.to_i
   end
 end 
+
+
+
+

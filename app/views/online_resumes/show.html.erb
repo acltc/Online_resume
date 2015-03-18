@@ -13,6 +13,19 @@
         <p> 
           <%= @student.short_bio %>
         </p>
+
+
+
+        <% @student.experience_details.each do |detail| %>
+         <h1> <%= detail %> </h1>
+        <% end %>
+
+
+
+
+
+
+
       </div>
     </div>
   </div>
