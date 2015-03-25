@@ -24,7 +24,7 @@ class Student
   end
 
   def self.find(id)
-    student_hash=Unirest.get("localhost:3001/students/#{id}.json ").body
+    student_hash=Unirest.get("localhost:3000/students/#{id}.json ").body
     return Student.new(student_hash)
   end
     
@@ -33,7 +33,7 @@ class Student
   end
 
   def self.all
-    students_array=Unirest.get("localhost:3001/students.json").body
+    students_array=Unirest.get("localhost:3000/students.json").body
     @students= []
     students_array.each do |student_hash|
      @students << Student.new(student_hash)
